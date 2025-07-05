@@ -1,0 +1,49 @@
+<% layout('layout/boilerplate') %>
+
+<div class="container mt-4">
+  <h3 class="mb-4">Create a New Listing</h3>
+  <form action="/listings" method="post" class="row g-3 needs-validation" novalidate>
+    
+    <div class="col-md-6">
+      <label for="title" class="form-label">Title</label>
+      <input name="listing[title]" id="title" placeholder="Enter title" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a title.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="price" class="form-label">Price</label>
+      <input name="listing[price]" id="price" placeholder="Enter price" type="number" class="form-control" required>
+      <div class="invalid-feedback">Please enter a price.</div>
+    </div>
+
+    <div class="col-12">
+      <label for="description" class="form-label">Description</label>
+      <textarea name="listing[description]" id="description" placeholder="Enter description" rows="3" class="form-control" required></textarea>
+      <div class="invalid-feedback">Please enter a description.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="image" class="form-label">Image URL</label>
+      <input name="listing[image][url]" id="image" placeholder="Enter image link" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a valid image URL.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="location" class="form-label">Location</label>
+      <input name="listing[location]" id="location" placeholder="Enter location" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a location.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="country" class="form-label">Country</label>
+      <input name="listing[country]" id="country" placeholder="Enter country" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a country.</div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary mt-3">Add Listing</button>
+    </div>
+
+  </form>
+</div>
+

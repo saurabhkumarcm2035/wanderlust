@@ -1,0 +1,48 @@
+<% layout('layout/boilerplate') %>
+
+<div class="container mt-4">
+  <h3 class="mb-4">Edit Listing</h3>
+  <form action="/listings/<%= listing._id %>?_method=PUT" method="post" class="row g-3 needs-validation" novalidate>
+    
+    <div class="col-md-6">
+      <label for="title" class="form-label">Title</label>
+      <input name="listing[title]" id="title" value="<%= listing.title %>" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a title.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="price" class="form-label">Price</label>
+      <input name="listing[price]" id="price" value="<%= listing.price %>" type="number" class="form-control" required>
+      <div class="invalid-feedback">Please enter a price.</div>
+    </div>
+
+    <div class="col-12">
+      <label for="description" class="form-label">Description</label>
+      <textarea name="listing[description]" id="description" rows="3" class="form-control" required><%= listing.description %></textarea>
+      <div class="invalid-feedback">Please enter a description.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="image" class="form-label">Image URL</label>
+      <input name="listing[image][url]" id="image" value="<%= listing.image.url %>" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a valid image URL.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="location" class="form-label">Location</label>
+      <input name="listing[location]" id="location" value="<%= listing.location %>" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a location.</div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="country" class="form-label">Country</label>
+      <input name="listing[country]" id="country" value="<%= listing.country %>" type="text" class="form-control" required>
+      <div class="invalid-feedback">Please enter a country.</div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-success mt-3">Save Changes</button>
+    </div>
+    
+  </form>
+</div>
