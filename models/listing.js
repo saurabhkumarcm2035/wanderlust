@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
 const Review = require("./review");
+const User = require("./user");
+
 
 const listingSchema = new mongoose.Schema({
     title:{
         type:String,
-        require:true
+        required:true
     },
     description:String,
     image: {
@@ -24,7 +26,11 @@ const listingSchema = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"Review",
         },
-    ]
+    ],
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    }
 });
 
 

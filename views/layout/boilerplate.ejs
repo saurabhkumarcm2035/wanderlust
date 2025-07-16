@@ -19,6 +19,7 @@
   <%- include('../includes/navbar') %>
 
   <div class="container mt-3">
+    <%- include('../includes/flash') %>
     <%- body %>
   </div>
 
@@ -42,5 +43,17 @@
       });
     })();
   </script>
+
+  <!-- auto remove flash message -->
+  <script>
+    setTimeout(() => {
+      const flashMessage = document.querySelector('.alert');
+      if (flashMessage) {
+        flashMessage.style.display = 'none';
+      }
+    },4000);
+  </script>
+
+  
 </body>
 </html>
